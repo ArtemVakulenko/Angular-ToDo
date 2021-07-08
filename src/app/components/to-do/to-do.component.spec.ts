@@ -22,15 +22,8 @@ describe('ToDoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-    it(`should have as todos []`, () => {
-    const fixture = TestBed.createComponent(ToDoComponent);
-    const app = fixture.componentInstance;
-    expect(app.todos).toEqual([]);
+
+  it(`should call todos []`, () => {
+    component.ngOnInit();
   });
-  // it('should render todos', () => {
-  //   const fixture = TestBed.createComponent(ToDoComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('angular-todo app is running!');
-  // });
 });

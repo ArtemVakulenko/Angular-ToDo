@@ -8,7 +8,6 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
 })
 
 export class ToDoComponent implements OnInit {
-
   todos:ToDoItem[]
   toDoInput:string = ''
 
