@@ -1,16 +1,12 @@
 <div class="ToDoList">
   <div class="inputSpace">
-    <input type="text"
-    name="toDoInput"
-    placeholder="Enter your task..."
-    class="toDoInput"
-    [(ngModel)] = "toDoInput">
-    <button class="addToDoButton" (click) = "addToDo()" title="press for add your task"> + </button>
+    <input type="text" name="toDoInput" placeholder="Enter your task..." class="toDoInput" [(ngModel)]="toDoInput">
+    <button class="addToDoButton" (click)="addToDo()" title="press for add your task"> + </button>
   </div>
-  <div *ngFor = 'let todo of todos; let index = index' class = "ToDoItem {{ todo.completed ? 'done' : ''}}">
-    <div class="index">{{ index }}</div>
-    <div class="content" >{{ todo.content }}</div>
-    <button class="doneBtn" title="press for mark task done" (click) = "toggleDone(index)">&#10004;</button>
-    <button class="deleteBtn" title="press for delete task" (click) = "deleteToDo(index)">&#10060;</button>
+  <div *ngFor='let todo of todos; let index = index' class="ToDoItem {{ todo.completed ? 'done' : ''}}">
+    <div class="index">{{ index + 1 }}</div>
+    <div class="content">{{ todo.content }}</div>
+    <button class="doneBtn" title="press for mark task done" (click)="toggleDone(index)"></button>
+    <button class="deleteBtn" title="press for delete task" (click)="deleteToDo(index)"></button>
   </div>
 </div>

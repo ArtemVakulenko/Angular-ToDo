@@ -1,6 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font: 400 14px/1 "Exo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  font-family: "Exo", sans-serif;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
 }

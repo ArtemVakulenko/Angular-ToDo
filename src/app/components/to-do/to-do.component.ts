@@ -6,6 +6,7 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
   templateUrl: './to-do.component.html',
   styleUrls: ['./to-do.component.scss']
 })
+
 export class ToDoComponent implements OnInit {
 
   todos:ToDoItem[]
@@ -28,6 +29,7 @@ export class ToDoComponent implements OnInit {
     this.todos = this.todos.filter((el, index) => index !== id
     )
   }
+
   addToDo():void {
     this.todos.push({
       content: this.toDoInput,

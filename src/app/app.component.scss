@@ -1,13 +1,12 @@
-.app{
-    display: flex;
-    flex-direction: column;
+.app {
+  display: flex;
+  flex-direction: column;
 }
-.header{
-    background: rgb(66, 196, 201);
-    padding: 50px;
-    text-align: center;
-    font-weight: bold;
-    color: honeydew;
-    font-size: 20px;
-    font-style: italic;
+.header {
+  background: rgb(66, 196, 201);
+  padding: 30px;
+  text-align: center;
+  font-weight: 600;
+  color: honeydew;
+  font-size: 30px;
 }
