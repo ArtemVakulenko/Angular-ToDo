@@ -11,6 +11,9 @@ export class ToDoComponent implements OnInit {
 
   todos:ToDoItem[]
   toDoInput:string = ''
+  errorText: string = ''
+  edit:boolean = false
+  editId: number = 0
 
   constructor() { }
 
@@ -30,11 +33,42 @@ export class ToDoComponent implements OnInit {
     )
   }
 
-  addToDo():void {
+  setEditToDo (el:ToDoItem) {
+    this.edit = true
+    this.toDoInput = el.content
+    this.editId = el.id
+  }
+
+  editToDo ():any {
+    if(!this.toDoInput) {
+      this.errorText = 'do not set empty todo'
+      return setTimeout(() => {
+        this.errorText = ''
+      }, 3000)
+    }
+    this.todos.forEach((el) => {
+      if(el.id === this.editId){
+        el.content = this.toDoInput
+      }
+    })
+    this.edit = false
+    this.editId = 0
+    this.toDoInput = ''
+  }
+
+  addToDo():any {
+    if(!this.toDoInput) {
+      this.errorText = 'do not set empty todo'
+      return setTimeout(() => {
+        this.errorText = ''
+      }, 3000)
+    }
     this.todos.push({
       content: this.toDoInput,
-      completed: false
+      completed: false,
+      id: this.todos.length + 1
     })
     this.toDoInput = ''
+    this.errorText = ''
   }
 }
