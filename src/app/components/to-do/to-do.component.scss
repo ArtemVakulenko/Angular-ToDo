@@ -1,3 +1,100 @@
 .ToDoItem.done {
   background-color: grey;
 }
+.ToDoList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+.inputSpace{
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.toDoInput:focus{
+  outline: none;
+  border: 1.5px solid rgb(66, 196, 201);
+}
+.toDoInput{
+  height: 40px;
+  border: none;
+  background: rgb(188, 233, 235);
+  padding-left: 10px;
+  border-radius: 5px
+}
+.toDoInput::placeholder{
+  font-style: italic;
+  font-size: 10px;
+}
+.addToDoButton{
+  color: aliceblue;
+  font-size: 30px;
+  font-weight: bold;
+  width: 40px;
+  background: rgb(66, 196, 201);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px
+}
+.addToDoButton:hover{
+  -webkit-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.3s;
+}
+.ToDoItem{
+  background: rgb(222, 247, 248);
+  display: flex;
+  border: 1px solid rgb(222, 247, 248);
+  width: 80%;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px
+}
+.index{
+  padding: 10px;
+}
+.content{
+  padding: 10px;
+  width: 80%;
+}
+.ToDoItem:hover{
+  -webkit-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.3s;
+}
+.doneBtn{
+  width: 42px;
+  border: none;
+  background: rgb(137, 221, 224);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.doneBtn:hover{
+  -webkit-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.3s;
+  background: rgb(66, 196, 201);
+}
+.deleteBtn{
+  width: 42px;
+  border: none;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.deleteBtn:hover{
+  -webkit-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.3s;
+}
