@@ -1,34 +1,34 @@
 .ToDoItem.done {
-  background-color: grey;
+  background-color: #75f488;
 }
-.ToDoList{
+.ToDoList {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 100px 0;
 }
-.inputSpace{
+.inputSpace {
   display: flex;
   width: 30%;
   justify-content: space-around;
   margin-bottom: 20px;
 }
-.toDoInput:focus{
+.toDoInput:focus {
   outline: none;
   border: 1.5px solid rgb(66, 196, 201);
 }
-.toDoInput{
+.toDoInput {
   height: 40px;
   border: none;
   background: rgb(188, 233, 235);
   padding-left: 10px;
-  border-radius: 5px
+  border-radius: 5px;
 }
-.toDoInput::placeholder{
+.toDoInput::placeholder {
   font-style: italic;
   font-size: 10px;
 }
-.addToDoButton{
+.addToDoButton {
   color: aliceblue;
   font-size: 30px;
   font-weight: bold;
@@ -36,16 +36,16 @@
   background: rgb(66, 196, 201);
   border: none;
   cursor: pointer;
-  border-radius: 5px
+  border-radius: 5px;
 }
-.addToDoButton:hover{
+.addToDoButton:hover {
   -webkit-transform: scale(1.005);
   -ms-transform: scale(1.005);
   transform: scale(1.005);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transition-duration: 0.3s;
 }
-.ToDoItem{
+.ToDoItem {
   background: rgb(222, 247, 248);
   display: flex;
   border: 1px solid rgb(222, 247, 248);
@@ -53,48 +53,59 @@
   margin-bottom: 10px;
   justify-content: space-between;
   padding: 10px;
-  border-radius: 5px
-}
-.index{
-  padding: 10px;
-}
-.content{
-  padding: 10px;
-  width: 80%;
-}
-.ToDoItem:hover{
-  -webkit-transform: scale(1.005);
-  -ms-transform: scale(1.005);
-  transform: scale(1.005);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  transition-duration: 0.3s;
-}
-.doneBtn{
-  width: 42px;
-  border: none;
-  background: rgb(137, 221, 224);
   border-radius: 5px;
-  cursor: pointer;
 }
-.doneBtn:hover{
+.index {
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+}
+.content {
+  align-items: center;
+  display: inline-block;
+  padding: 10px;
+  width: 85%;
+  overflow-wrap: break-word;
+  min-height: 60px;
+}
+.ToDoItem:hover {
   -webkit-transform: scale(1.005);
   -ms-transform: scale(1.005);
   transform: scale(1.005);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transition-duration: 0.3s;
-  background: rgb(66, 196, 201);
 }
-.deleteBtn{
-  width: 42px;
-  border: none;
-  background: white;
+.doneBtn {
+  width: 44px;
+  height: 44px;
+  padding: 5px;
   border-radius: 5px;
-  cursor: pointer;
+  margin: auto 0;
+  border-radius: 5px;
+  background: url("../../../assets/images/check.svg") no-repeat center;
+  background-size: 30px;
 }
-.deleteBtn:hover{
+.doneBtn:hover {
   -webkit-transform: scale(1.005);
   -ms-transform: scale(1.005);
   transform: scale(1.005);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transition-duration: 0.3s;
+  background-color: #b5edff;
+}
+.deleteBtn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 5px;
+  margin: auto 0;
+  background: url("../../../assets/images/close.svg") no-repeat center;
+  background-size: 25px;
+}
+.deleteBtn:hover {
+  -webkit-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+  transition-duration: 0.3s;
+  background-color: #fccece;
 }
