@@ -9,8 +9,9 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
 
 export class ToDoComponent implements OnInit {
 
-  todos:ToDoItem[]
-  toDoInput:string = ''
+  saved: ToDoItem []
+  todos: ToDoItem []
+  toDoInput: string = ''
   errorText: string = ''
   edit:boolean = false
   editId: number = 0
@@ -18,7 +19,14 @@ export class ToDoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.todos = []
+    // this.saved = localStorage.getItem('todos')
+    // this.todos = this.saved || []
+    let ak = localStorage.getItem('todos')
+    // console.log((localStorage.getItem('todos')).json())
+    console.log("ak", ak)
+
+  // this.todos = (localStorage.getItem('todos')!== null) ? JSON.parse(this.saved) : [];
+	// localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
   toggleDone (id:number):void {
@@ -70,5 +78,6 @@ export class ToDoComponent implements OnInit {
     })
     this.toDoInput = ''
     this.errorText = ''
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 }
