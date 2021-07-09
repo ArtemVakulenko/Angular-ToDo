@@ -6,12 +6,14 @@
   flex-direction: column;
   align-items: center;
   padding: 100px 0;
+  color: #6c6464;
 }
 .inputSpace {
   display: flex;
   width: 30%;
   justify-content: space-around;
   margin-bottom: 20px;
+  color: aliceblue;
 }
 .toDoInput:focus {
   outline: none;
@@ -23,6 +25,7 @@
   background: rgb(188, 233, 235);
   padding-left: 10px;
   border-radius: 5px;
+  color: #6c6464;
 }
 .toDoInput::placeholder {
   font-style: italic;
@@ -65,7 +68,7 @@
   align-items: center;
   display: inline-block;
   padding: 10px;
-  width: 85%;
+  width: 78%;
   overflow-wrap: break-word;
   min-height: 60px;
 }
@@ -108,4 +111,18 @@
   transform: scale(1.005);
   transition-duration: 0.3s;
   background-color: #fccece;
+}
+.editBtn{
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 5px;
+  margin: auto 0;
+}
+.editBtn:hover{
+  -webkit-transform: scale(1.005);
+  -ms-transform: scale(1.005);
+  transform: scale(1.005);
+  transition-duration: 0.3s;
+  background-color: #acacac8f;
 }

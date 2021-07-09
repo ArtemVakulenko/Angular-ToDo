@@ -1,12 +1,22 @@
 <div class="ToDoList">
   <div class="inputSpace">
-    <input type="text" name="toDoInput" placeholder="Enter your task..." class="toDoInput" [(ngModel)]="toDoInput">
-    <button class="addToDoButton" (click)="addToDo()" title="press for add your task"> + </button>
+    <input type="text"
+      name="toDoInput"
+      class="toDoInput" 
+      placeholder="Enter your task..."
+      [(ngModel)]="toDoInput" 
+      (keydown.enter) = "edit ? editToDo() : addToDo()"
+      >
+    <button class="addToDoButton {{edit ? 'edit' : ''}}" 
+      (click)="edit ? editToDo() : addToDo()" 
+      title="press for add your task"> {{edit ? '&#9998;' : '+'}} </button>
   </div>
+  <div class="errorText">{{errorText ? errorText : null}}</div>
   <div *ngFor='let todo of todos; let index = index' class="ToDoItem {{ todo.completed ? 'done' : ''}}">
-    <div class="index">{{ index + 1 }}</div>
+    <div class="index">{{ todo.id }}</div>
     <div class="content">{{ todo.content }}</div>
     <button class="doneBtn" title="press for mark task done" (click)="toggleDone(index)"></button>
+    <button class="editBtn" title="edit this ToDoItem" (click)="setEditToDo(todo)">edit</button>
     <button class="deleteBtn" title="press for delete task" (click)="deleteToDo(index)"></button>
   </div>
 </div>
