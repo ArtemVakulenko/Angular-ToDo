@@ -30,6 +30,7 @@ export class ToDoComponent implements OnInit {
   toggleDone (id:number):void {
     this.todos.map((el, index) => {
       if(index === id) el.completed = !el.completed
+      this.setLS()
       return el
     })
   }
