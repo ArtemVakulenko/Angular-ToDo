@@ -27,10 +27,4 @@ describe('ToDoComponent', () => {
     const app = fixture.componentInstance;
     expect(app.todos).toEqual([]);
   });
-  // it('should render todos', () => {
-  //   const fixture = TestBed.createComponent(ToDoComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('angular-todo app is running!');
-  // });
 });

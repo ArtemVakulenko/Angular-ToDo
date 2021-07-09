@@ -66,11 +66,16 @@
 }
 .content {
   align-items: center;
-  display: inline-block;
+  display: flex;
   padding: 10px;
   width: 78%;
-  overflow-wrap: break-word;
   min-height: 60px;
+
+  &__text {
+    display: inline-block;
+    overflow-wrap: break-word;
+    width: 100%;
+  }
 }
 .ToDoItem:hover {
   -webkit-transform: scale(1.005);
@@ -112,17 +117,23 @@
   transition-duration: 0.3s;
   background-color: #fccece;
 }
-.editBtn{
+.editBtn {
   width: 44px;
   height: 44px;
   border: none;
   border-radius: 5px;
   margin: auto 0;
+  background: url("../../../assets/images/pencil.svg") no-repeat center;
+  background-size: 25px;
 }
-.editBtn:hover{
+.editBtn:hover {
   -webkit-transform: scale(1.005);
   -ms-transform: scale(1.005);
   transform: scale(1.005);
   transition-duration: 0.3s;
-  background-color: #acacac8f;
+  background-color: #ecff258f;
+}
+
+.done {
+  background-color: #75f488;
 }
