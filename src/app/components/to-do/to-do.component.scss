@@ -1,5 +1,6 @@
 .ToDoItem.done {
-  background-color: #75f488;
+  background-color: rgba(210, 208, 208, 0.53);
+  text-decoration: line-through;
 }
 .ToDoList {
   display: flex;
