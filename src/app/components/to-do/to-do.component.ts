@@ -24,7 +24,7 @@ export class ToDoComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.todos = JSON.parse(this.saved)
+    this.todos = JSON.parse(this.saved) || [];
   }
 
   toggleDone (id:number):void {
@@ -39,13 +39,13 @@ export class ToDoComponent implements OnInit {
     )
     this.setLS()
   }
-  
+
   setEditToDo (el:ToDoItem) {
     this.edit = true
     this.toDoInput = el.content
     this.editId = el.id
   }
-  
+
   editToDo ():any {
     if(!this.toDoInput) {
       this.errorText = 'do not set empty todo'
@@ -63,7 +63,7 @@ export class ToDoComponent implements OnInit {
     this.toDoInput = ''
     this.setLS()
   }
-  
+
   addToDo():any {
     if(!this.toDoInput) {
       this.errorText = 'do not set empty todo'
