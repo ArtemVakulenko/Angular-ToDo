@@ -5,11 +5,11 @@
       class="toDoInput" 
       placeholder="Enter your task..."
       [(ngModel)]="toDoInput" 
-      (keydown.enter) = 'addToDo()'
+      (keydown.enter) = "edit ? editToDo() : addToDo()"
       >
     <button class="addToDoButton {{edit ? 'edit' : ''}}" 
       (click)="edit ? editToDo() : addToDo()" 
-      title="press for add your task"> + </button>
+      title="press for add your task"> {{edit ? '&#9998;' : '+'}} </button>
   </div>
   <div class="errorText">{{errorText ? errorText : null}}</div>
   <div *ngFor='let todo of todos; let index = index' class="ToDoItem {{ todo.completed ? 'done' : ''}}">
