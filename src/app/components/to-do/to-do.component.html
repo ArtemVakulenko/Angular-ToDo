@@ -7,7 +7,6 @@
   </div>
   <div class="errorText">{{errorText ? errorText : null}}</div>
   <div *ngFor='let todo of todos; let index = index' class="ToDoItem {{ todo.completed ? 'done' : ''}}">
-    <div class="index">{{ todo.id }}</div>
     <div class="content">
       <p class="content__text">{{ todo.content }}</p>
     </div>

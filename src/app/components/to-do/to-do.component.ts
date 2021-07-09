@@ -9,24 +9,22 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
 
 export class ToDoComponent implements OnInit {
 
-  saved: ToDoItem []
+  saved: any
   todos: ToDoItem []
   toDoInput: string = ''
   errorText: string = ''
   edit:boolean = false
   editId: number = 0
+  setLS = () => {
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 
-  constructor() { }
+  constructor() {
+    this.saved = localStorage.getItem('todos')
+   }
 
   ngOnInit(): void {
-    // this.saved = localStorage.getItem('todos')
-    // this.todos = this.saved || []
-    let ak = localStorage.getItem('todos')
-    // console.log((localStorage.getItem('todos')).json())
-    console.log("ak", ak)
-
-  // this.todos = (localStorage.getItem('todos')!== null) ? JSON.parse(this.saved) : [];
-	// localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.todos = JSON.parse(this.saved)
   }
 
   toggleDone (id:number):void {
@@ -39,14 +37,15 @@ export class ToDoComponent implements OnInit {
   deleteToDo (id:number):void {
     this.todos = this.todos.filter((el, index) => index !== id
     )
+    this.setLS()
   }
-
+  
   setEditToDo (el:ToDoItem) {
     this.edit = true
     this.toDoInput = el.content
     this.editId = el.id
   }
-
+  
   editToDo ():any {
     if(!this.toDoInput) {
       this.errorText = 'do not set empty todo'
@@ -62,8 +61,9 @@ export class ToDoComponent implements OnInit {
     this.edit = false
     this.editId = 0
     this.toDoInput = ''
+    this.setLS()
   }
-
+  
   addToDo():any {
     if(!this.toDoInput) {
       this.errorText = 'do not set empty todo'
@@ -78,6 +78,6 @@ export class ToDoComponent implements OnInit {
     })
     this.toDoInput = ''
     this.errorText = ''
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.setLS()
   }
 }
